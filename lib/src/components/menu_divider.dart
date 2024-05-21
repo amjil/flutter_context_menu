@@ -41,8 +41,8 @@ final class MenuDivider extends ContextMenuEntry {
 
   @override
   Widget builder(BuildContext context, ContextMenuState menuState) {
-    return Divider(
-      height: height ?? 8.0,
+    return VerticalDivider(
+      width: height ?? 8.0,
       thickness: thickness ?? 0.0,
       indent: indent,
       endIndent: endIndent,

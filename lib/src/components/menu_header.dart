@@ -34,10 +34,13 @@ final class MenuHeader extends ContextMenuEntry {
       padding: const EdgeInsets.all(8.0),
       child: Align(
         alignment: AlignmentDirectional.centerStart,
-        child: Text(
-          disableUppercase ? text : text.toUpperCase(),
-          style: context.textTheme.labelMedium?.copyWith(
-            color: context.theme.disabledColor.withOpacity(0.3),
+        child: RotatedBox(
+          quarterTurns: 1,
+          child: Text(
+            disableUppercase ? text : text.toUpperCase(),
+            style: context.textTheme.labelMedium?.copyWith(
+              color: context.theme.disabledColor.withOpacity(0.3),
+            ),
           ),
         ),
       ),

@@ -6,12 +6,12 @@ Map<String, ContextMenu> _contextMenus() => {
       "Default (built-in)": ContextMenu(entries: defaultContextMenuItems),
       "Custom\n\nmax width: 200\npadding: 0": ContextMenu(
         entries: customContextMenuItems,
-        maxWidth: 200,
+        maxHeight: 200,
         padding: EdgeInsets.zero,
       ),
       "Custom with box decoration\n\npadding: horizontal(8)": ContextMenu(
         entries: customContextMenuItems,
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
         boxDecoration: BoxDecoration(
           color: Colors.blue.shade900,
           borderRadius: BorderRadius.zero,

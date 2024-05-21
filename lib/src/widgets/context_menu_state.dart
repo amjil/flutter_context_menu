@@ -65,7 +65,7 @@ class ContextMenuState extends ChangeNotifier {
 
   List<ContextMenuEntry> get entries => menu.entries;
   Offset get position => menu.position ?? Offset.zero;
-  double get maxWidth => menu.maxWidth;
+  double get maxHeight => menu.maxHeight;
   BorderRadiusGeometry? get borderRadius => menu.borderRadius;
   EdgeInsets get padding => menu.padding;
   Clip get clipBehavior => menu.clipBehavior;
@@ -103,7 +103,7 @@ class ContextMenuState extends ChangeNotifier {
     SpawnDirection? spawnDirection,
   ) {
     double left = parentRect.left + parentRect.width;
-    double top = parentRect.top;
+    double top = parentRect.bottom;
 
     left += menu.padding.right;
     top -= menu.padding.top;

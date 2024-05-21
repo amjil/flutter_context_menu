@@ -27,17 +27,20 @@ final class CustomContextMenuItem extends ContextMenuItem<String> {
   @override
   Widget builder(BuildContext context, ContextMenuState menuState,
       [FocusNode? focusNode]) {
-    return ListTile(
-      focusNode: focusNode, // important for highlighting item on focus
-      title: SizedBox(width: double.maxFinite, child: Text(label)),
-      subtitle: subtitle != null ? Text(subtitle!) : null,
-      onTap: () => handleItemSelection(context),
-      trailing: Icon(isSubmenuItem ? Icons.arrow_right : null),
-      leading: Icon(icon),
-      dense: false,
-      selected: menuState.isOpened(this),
-      selectedColor: Colors.white,
-      selectedTileColor: Colors.blue,
+    return RotatedBox(
+      quarterTurns: 1,
+      child: ListTile(
+        focusNode: focusNode, // important for highlighting item on focus
+        title: SizedBox(width: double.maxFinite, child: Text(label)),
+        subtitle: subtitle != null ? Text(subtitle!) : null,
+        onTap: () => handleItemSelection(context),
+        trailing: Icon(isSubmenuItem ? Icons.arrow_right : null),
+        leading: Icon(icon),
+        dense: false,
+        selected: menuState.isOpened(this),
+        selectedColor: Colors.white,
+        selectedTileColor: Colors.blue,
+      ),
     );
   }
 

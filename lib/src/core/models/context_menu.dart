@@ -24,7 +24,7 @@ class ContextMenu {
   /// The maximum width of the context menu.
   ///
   /// Defaults to 350.0
-  double maxWidth;
+  double maxHeight;
 
   /// The clip behavior of the context menu.
   ///
@@ -44,12 +44,12 @@ class ContextMenu {
     this.position,
     EdgeInsets? padding,
     this.borderRadius,
-    double? maxWidth,
+    double? maxHeight,
     Clip? clipBehavior,
     this.boxDecoration,
     Map<ShortcutActivator, VoidCallback>? shortcuts,
   })  : padding = padding ?? const EdgeInsets.all(4.0),
-        maxWidth = maxWidth ?? 350.0,
+        maxHeight = maxHeight ?? 350.0,
         clipBehavior = clipBehavior ?? Clip.antiAlias,
         shortcuts = shortcuts ?? const {};
 
@@ -65,7 +65,7 @@ class ContextMenu {
     List<ContextMenuEntry>? entries,
     EdgeInsets? padding,
     BorderRadiusGeometry? borderRadius,
-    double? maxWidth,
+    double? maxHeight,
     Clip? clipBehavior,
     BoxDecoration? boxDecoration,
   }) {
@@ -74,7 +74,7 @@ class ContextMenu {
       entries: entries ?? this.entries,
       padding: padding ?? this.padding,
       borderRadius: borderRadius ?? this.borderRadius,
-      maxWidth: maxWidth ?? this.maxWidth,
+      maxHeight: maxHeight ?? this.maxHeight,
       clipBehavior: clipBehavior ?? this.clipBehavior,
       boxDecoration: boxDecoration ?? this.boxDecoration,
     );

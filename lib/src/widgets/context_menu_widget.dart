@@ -102,14 +102,14 @@ class ContextMenuWidget extends StatelessWidget {
     return Container(
       padding: state.padding,
       constraints: BoxConstraints(
-        maxWidth: state.maxWidth,
+        maxHeight: state.maxHeight,
       ),
       clipBehavior: state.clipBehavior,
       decoration: state.boxDecoration ?? boxDecoration,
       child: Material(
         type: MaterialType.transparency,
-        child: IntrinsicWidth(
-          child: Column(
+        child: IntrinsicHeight(
+          child: Row(
             children: [
               for (final item in state.entries) MenuEntryWidget(entry: item)
             ],
