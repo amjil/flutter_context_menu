@@ -68,23 +68,37 @@ class ContextMenuWidget extends StatelessWidget {
       borderRadius: state.borderRadius ?? BorderRadius.circular(4.0),
     );
 
-    return Container(
-      padding: state.padding,
-      constraints: BoxConstraints(
-        maxWidth: state.maxWidth,
+    return TweenAnimationBuilder<double>(
+      tween: Tween(
+        begin: 0.8,
+        end: 1.0,
       ),
-      clipBehavior: state.clipBehavior,
-      decoration: state.boxDecoration ?? boxDecoration,
-      child: Material(
-        type: MaterialType.transparency,
-        child: IntrinsicWidth(
-          child: Column(
-            children: [
-              for (final item in state.entries) MenuEntryWidget(entry: item)
-            ],
+      duration: const Duration(milliseconds: 60),
+      builder: (context, value, child) {
+        return Transform.scale(
+          alignment: state.spawnAlignment,
+          scale: value,
+          child: Container(
+            padding: state.padding,
+            constraints: BoxConstraints(
+              maxWidth: state.maxHeight,
+            ),
+            clipBehavior: state.clipBehavior,
+            decoration: state.boxDecoration ?? boxDecoration,
+            child: Material(
+              type: MaterialType.transparency,
+              child: IntrinsicHeight(
+                child: Row(
+                  children: [
+                    for (final item in state.entries)
+                      MenuEntryWidget(entry: item)
+                  ],
+                ),
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
