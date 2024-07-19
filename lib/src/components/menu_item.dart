@@ -117,4 +117,7 @@ final class MenuItem<T> extends ContextMenuItem<T> {
       ),
     );
   }
+
+  @override
+  String get debugLabel => "[${hashCode.toString().substring(0, 5)}] $label";
 }

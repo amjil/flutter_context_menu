@@ -45,5 +45,5 @@ final class CustomContextMenuItem extends ContextMenuItem<String> {
   }
 
   @override
-  List<Object?> get props => [...super.props, label, subtitle, icon];
+  String get debugLabel => "[${hashCode.toString().substring(0, 5)}] $label";
 }
